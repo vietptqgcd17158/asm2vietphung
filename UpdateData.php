@@ -25,12 +25,12 @@
 <?php
 if (empty(getenv("DATABASE_URL"))){
     echo '<p>The DB does not exist</p>';
-    $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
+    $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=asm2vietphung', 'postgres', '123456');
 }  else {
      
    $db = parse_url(getenv("DATABASE_URL"));
    $pdo = new PDO("pgsql:" . sprintf(
-        "host=ec2-54-83-192-245.compute-1.amazonaws.com;port=5432;user=vcujfzrpxvdtyx;password=6722ff5be8a5a94e3fb874bb728a7f177eacfb70f9317f010e37a7d1e00d9668;dbname=dfu22a679eqmoc",
+        "host=ec2-50-17-21-170.compute-1.amazonaws.com;port=5432;user=olxwlnkizrqbrp;password=de6aa0033cc3d3365e030e7153f52bf97132f16ac347be41eec07c2a28fc40af;dbname=d1lr64rk800aqj",
         $db["host"],
         $db["port"],
         $db["user"],
