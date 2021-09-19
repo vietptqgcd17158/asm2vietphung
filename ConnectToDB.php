@@ -19,7 +19,7 @@ echo "ATNs SYSTEM";
 
 if (empty(getenv("DATABASE_URL"))){
     echo '<p>The database not exist</p>';
-    $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=asm2vietphung', 'postgres', '123456');
+    $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=asm2vietphung', 'postgres', '1234');
 }  else {
      echo '<p>The database exist</p>';
      echo getenv("dbname");
