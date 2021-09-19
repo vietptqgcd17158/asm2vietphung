@@ -38,18 +38,18 @@ if (empty(getenv("DATABASE_URL"))){
         ltrim($db["path"], "/")
    ));
 }  
-//$sql = 'UPDATE student '
-//                . 'SET name = :name, '
-//                . 'WHERE ID = :id';
-// 
-//      $stmt = $pdo->prepare($sql);
-//      //bind values to the statement
-//        $stmt->bindValue(':name', 'Lee');
-//        $stmt->bindValue(':id', 'SV02');
-        // update data in the database
-//        $stmt->execute();
-        // return the number of row affected
-        //return $stmt->rowCount();
+$sql = 'UPDATE student '
+               . 'SET name = :name, '
+               . 'WHERE ID = :id';
+
+     $stmt = $pdo->prepare($sql);
+     //bind values to the statement
+       $stmt->bindValue(':name', 'Lee');
+       $stmt->bindValue(':id', 'SV02');
+        update data in the database
+       $stmt->execute();
+        return the number of row affected
+        return $stmt->rowCount();
 $sql = "UPDATE employee SET empname = '$_POST[empname]', empemail = '$_POST[empemail]', empphone = '$_POST[empphone]' WHERE empid = '$_POST[empid]'";
       $stmt = $pdo->prepare($sql);
 if($stmt->execute() == TRUE){
