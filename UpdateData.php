@@ -25,7 +25,7 @@
 <?php
 if (empty(getenv("DATABASE_URL"))){
     echo '<p>The DB does not exist</p>';
-    $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=asm2vietphung', 'postgres', '123456');
+    $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=asm2vietphung', 'postgres', '1234');
 }  else {
      
    $db = parse_url(getenv("DATABASE_URL"));
@@ -38,18 +38,18 @@ if (empty(getenv("DATABASE_URL"))){
         ltrim($db["path"], "/")
    ));
 }  
-$sql = 'UPDATE student '
-               . 'SET name = :name, '
-               . 'WHERE ID = :id';
+// $sql = 'UPDATE student '
+//                . 'SET name = :name, '
+//                . 'WHERE ID = :id';
 
-     $stmt = $pdo->prepare($sql);
-     //bind values to the statement
-       $stmt->bindValue(':name', 'Lee');
-       $stmt->bindValue(':id', 'SV02');
-        update data in the database
-       $stmt->execute();
-        return the number of row affected
-        return $stmt->rowCount();
+//      $stmt = $pdo->prepare($sql);
+//      //bind values to the statement
+//        $stmt->bindValue(':name', 'Lee');
+//        $stmt->bindValue(':id', 'SV02');
+//         update data in the database
+//        $stmt->execute();
+//         return the number of row affected
+//         return $stmt->rowCount();
 $sql = "UPDATE employee SET empname = '$_POST[empname]', empemail = '$_POST[empemail]', empphone = '$_POST[empphone]' WHERE empid = '$_POST[empid]'";
       $stmt = $pdo->prepare($sql);
 if($stmt->execute() == TRUE){
